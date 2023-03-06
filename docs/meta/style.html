@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding Style &mdash; CS 374 - Operating Systems  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/brand.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.svg"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Systems Programming Best Practices" href="../modules/10/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D73F09" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CS 374 - Operating Systems
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/00/index.html">Start Here</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/00/setup_guide.html">CS 344 Setup Guide (eCampus)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/00/setup_guide.html#pre-setup">Pre-Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/00/setup_guide.html#configuration-process-overview">Configuration Process Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/00/setup_guide.html#installing-a-terminal-emulator">Installing a Terminal Emulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#windows">Windows</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/00/setup_guide.html#option-1">Option 1</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#option-2">Option 2</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/00/setup_guide.html#option-3">Option 3</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#macos-linux-bsd-etc">MacOS, Linux, BSD, etc.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/00/setup_guide.html#local-setup">Local Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#generate-public-private-key-pair">Generate Public/Private Key Pair</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#register-public-key-credential-with-server">Register Public Key Credential with Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#confirm-key-registration">Confirm Key Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/00/setup_guide.html#configure-ssh-client">Configure SSH Client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/00/setup_guide.html#remote-setup">Remote Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/01/index.html">Operating Systems Fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/01/index.html#explorations">Explorations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/introduction.html">Introduction to Operating Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/introduction.html#a-brief-history-of-unix">A Brief History of Unix</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/introduction.html#posix-and-sus">POSIX and SuS</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/introduction.html#the-c-programming-language">The C Programming Language</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/introduction.html#the-kernel-and-system-utilities">The Kernel and System Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/processes.html">Programs and Processes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/processes.html#virtual-memory">Virtual Memory</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#swapping">Swapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#lazy-allocation-and-over-commit">Lazy Allocation and Over-Commit</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#shared-memory">Shared Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/processes.html#user-mode-kernel-mode-and-system-calls">User Mode, Kernel Mode, and System Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/processes.html#inter-process-communication">Inter-process Communication</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#signals">Signals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#pipes">Pipes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#unix-sockets">Unix Sockets</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/processes.html#process-hierarchy">Process Hierarchy</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#init-process">Init Process</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/processes.html#process-creation-and-cleanup">Process Creation and Cleanup</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/processes.html#user-and-group-id">User and Group ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/processes.html#file-descriptors">File Descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/filesystem.html">File Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/filesystem.html#file-system-structure">File System Structure</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#mounting-and-unmounting-file-systems">Mounting and Unmounting File systems</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#links">Links</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/filesystem.html#hard-links">Hard Links</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/filesystem.html#symbolic-links">Symbolic Links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/filesystem.html#access-permissions">Access Permissions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#file-ownership">File Ownership</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#special-permission-bits">Special Permission Bits</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/filesystem.html#set-user-id-bit">Set User ID Bit</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/filesystem.html#set-group-id-bit">Set Group ID Bit</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/filesystem.html#sticky-bit">Sticky Bit</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#representation-of-file-mode">Representation of File Mode</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#permissions-and-special-files">Permissions and Special Files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#alternative-access-control">Alternative Access Control</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/filesystem.html#additional-file-metadata">Additional File Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/filesystem.html#the-filesystem-hierarchy-standard">The Filesystem Hierarchy Standard</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#the-fhs-directory-structure">The FHS Directory Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/filesystem.html#additional-file-system-concepts">Additional File System Concepts</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#hidden-files-dotfiles">Hidden Files (Dotfiles)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#dot-and-dot-dot">Dot (<code class="file docutils literal notranslate"><span class="pre">.</span></code>) and Dot-Dot (<code class="file docutils literal notranslate"><span class="pre">..</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#special-device-files">Special Device Files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/filesystem.html#home-directory">Home Directory (<code class="file docutils literal notranslate"><span class="pre">~/</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/terminal.html">Terminal Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/terminal.html#terminal-operating-modes">Terminal Operating Modes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/terminal.html#local-modes">Local Modes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/terminal.html#control-characters">Control Characters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/terminal.html#input-characters-which-generate-signals">Input characters which generate signals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/terminal.html#input-characters-which-control-the-line-buffer">Input characters which control the line buffer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/terminal.html#flow-control-characters">Flow control characters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/terminal.html#terminal-demonstration">Terminal Demonstration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/terminal.html#control-codes">Control Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/utilities.html">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/utilities.html#the-shell">The Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/utilities.html#text-editors">Text Editors</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/utilities.html#line-editors">Line Editors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/utilities.html#visual-editors">Visual Editors</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/utilities.html#documentation-browsers">Documentation Browsers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/utilities.html#manual-pager">Manual Pager</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/utilities.html#gnu-info">GNU Info</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/shell.html">The Interactive Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/simple_commands.html">Simple Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/quoting.html">Quoting</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/quoting.html#backslash-escapes">Backslash Escapes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/quoting.html#single-quotes">Single Quotes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/quoting.html#double-quotes">Double Quotes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html">Expansion</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#tilde-expansion">Tilde Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#parameter-expansion">Parameter Expansion</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#positional-and-special-parameters">Positional and Special Parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#shell-variables">Shell Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#modified-parameter-expansion">Modified Parameter Expansion</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#command-substitution">Command Substitution</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#arithmetic-expansion">Arithmetic Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#field-splitting">Field Splitting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#pathname-expansion">Pathname Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/expansion.html#quote-removal">Quote Removal</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/variable_assignment_and_redirection.html">Variable Assignment and Redirection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/variable_assignment_and_redirection.html#variable-assignment">Variable Assignment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/variable_assignment_and_redirection.html#redirection">Redirection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/shell/variable_assignment_and_redirection.html#file-redirection">File Redirection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/shell/variable_assignment_and_redirection.html#duplication">Duplication</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/01/explorations/shell/variable_assignment_and_redirection.html#here-documents">Here Documents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/command_execution.html">Command Execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/pipelines.html">Pipelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/01/explorations/shell/pipelines.html#pipeline-subshells">Pipeline Subshells</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/shell/background.html">Background Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/explorations/vim.html">Software Development in Vim</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/vim.html#vimtutor">Vimtutor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/explorations/vim.html#other-tips">Other tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/01/index.html#assignments">Assignments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/assignments/reading.html">Assigned Reading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/assignments/reading.html#posix-standard">POSIX Standard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/01/assignments/reading.html#man-pages">Man Pages</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/01/assignments/viewing.html">Assigned Viewing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/02/index.html">The Shell Command Language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/02/index.html#explorations">Explorations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/02/explorations/review.html">Interactive Shell Review</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/review.html#basic-shell-operation">Basic Shell Operation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/review.html#quoting-rules">Quoting Rules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/review.html#expansion">Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/review.html#redirection">Redirection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/review.html#variable-assignment">Variable Assignment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/review.html#execution">Execution</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/review.html#waiting">Waiting</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/review.html#pipelines">Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/review.html#background-commands-and-jobs">Background Commands and Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/02/explorations/noninteractive_shell.html">The Non-interactive Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/noninteractive_shell.html#writing-and-executing-a-shell-script">Writing and Executing a Shell Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/noninteractive_shell.html#hallmarks-of-a-shell-script">Hallmarks of a Shell Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/02/explorations/parameters.html">Shell Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/parameters/positional_parameters.html">Positional Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/parameters/positional_parameters.html#modifying-positional-parameters">Modifying Positional Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/parameters/special_parameters.html">Special Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/parameters/special_parameters.html#exit-status">Exit Status (<code class="docutils literal notranslate"><span class="pre">?</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/parameters/special_parameters.html#shell-options">Shell Options (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/parameters/special_parameters.html#process-id">Process ID (<code class="docutils literal notranslate"><span class="pre">$</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/parameters/special_parameters.html#background-process-id">Background Process ID (<code class="docutils literal notranslate"><span class="pre">!</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/parameters/special_parameters.html#program-name-0">Program Name (<code class="docutils literal notranslate"><span class="pre">0</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/02/explorations/control_flow.html">Control Flow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/control_flow.html#background">Background</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/background/reserved_words_and_operators.html">Reserved Words and Operators</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/reserved_words_and_operators.html#reserved-words">Reserved Words</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/reserved_words_and_operators.html#control-operators">Control Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html">Exit Status</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html#exit-status-semantics">Exit Status Semantics</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html#exit-status-parameter">Exit status parameter</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html#familiar-constructs">Familiar Constructs</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html#simple-commands">Simple Commands</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html#pipelines">Pipelines</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../modules/02/explorations/control_flow/background/exit_status.html#asynchronous-commands">Asynchronous Commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/background/shell_grammar.html">Shell Grammar</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/shell_grammar.html#and-or-lists">And-or Lists</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/background/shell_grammar.html#compound-lists">Compound-Lists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/control_flow.html#compound-commands">Compound Commands</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/grouping_constructs.html">Grouping Constructs</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/grouping_constructs.html#subshell">Subshell</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/grouping_constructs.html#brace-group">Brace Group</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/loops.html">Loops</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/loops.html#while-loop">While Loop</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/loops.html#until-loop">Until Loop</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/loops.html#for-loop">For Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/conditional_constructs.html">Conditional Constructs</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/conditional_constructs.html#if-conditional-construct">If Conditional Construct</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/compound_commands/conditional_constructs.html#case-conditional-construct">Case Conditional Construct</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/control_flow.html#shell-functions">Shell Functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/control_flow/function_definition.html">Function Definition</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/function_definition.html#function-parameters">Function Parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/control_flow/function_definition.html#explicit-return">Explicit Return</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/02/explorations/builtins.html">Builtins</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/builtins.html#regular-built-ins">Regular Built-ins</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/builtins/aliases.html">Alias Substitution</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/aliases.html#aliasing-reserved-words">Aliasing Reserved Words</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/aliases.html#alias-best-practices">Alias Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/builtins/getopts.html">Options Processing</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/getopts.html#arguments">Arguments</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/getopts.html#exit-status">Exit Status</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/getopts.html#operation">Operation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/getopts.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/builtins/file_access_and_creation.html">File Access and Creation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/file_access_and_creation.html#file-mode-creation-mask-umask">File Mode Creation Mask (umask)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/file_access_and_creation.html#group-selection">Group Selection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/builtins.html#special-built-ins">Special Built-Ins</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/builtins/parameters_and_options.html">Parameters and Options</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/parameters_and_options.html#unsetting-variables">Unsetting Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/parameters_and_options.html#exporting-variables">Exporting Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/parameters_and_options.html#readonly-variables">Readonly variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/02/explorations/builtins/parameters_and_options.html#shell-options">Shell Options</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/02/explorations/builtins/signals.html">Signal Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/02/explorations/executable_scripts.html">Executable Shell Scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/executable_scripts.html#magic-bytes">Magic Bytes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/executable_scripts.html#executable-formats">Executable Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/02/explorations/executable_scripts.html#shebang">Shebang</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/02/index.html#assignments">Assignments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/03/index.html">Introduction to C</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modules/03/explorations/c-language/index.html">The C Programming Language</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html">Conceptual Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#environment">Environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#the-translation-environment">The Translation Environment</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#preprocessing">Preprocessing</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#compilation">Compilation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#linking">Linking</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#the-execution-environment">The Execution Environment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#conformance">Conformance</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#the-c-abstract-machine-model">The C Abstract Machine Model</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#behavior">Behavior</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#unspecified-behavior"><span class="xref std std-ref">Unspecified Behavior</span></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#implementation-defined-behavior"><span class="xref std std-ref">Implementation-defined Behavior</span></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#locale-specific-behavior"><span class="xref std std-ref">Locale-specific Behavior</span></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/conceptual-model/index.html#undefined-behavior"><span class="xref std std-ref">Undefined Behavior</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/index.html">Language</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html">C Object Model</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#effective-type">Effective Type</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#size">Size</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#object-representation">Object Representation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#value">Value</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#alignment">Alignment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#storage-duration-and-lifetime">Storage Duration and Lifetime</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/object-model.html#address">Address</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html">Identifiers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#name-space">Name Space</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#label-names">Label Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#tag-names">Tag Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#member-names">Member Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#ordinary-identifiers">Ordinary Identifiers</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#scope">Scope</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#function-scope">Function Scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#file-scope">File Scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#block-scope">Block Scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#function-prototype-scope">Function Prototype Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#linkage">Linkage</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#no-linkage">No Linkage</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#internal-linkage">Internal Linkage</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/identifiers.html#external-linkage">External Linkage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html">C Type System</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#special-types">Special Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#void">void</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#char">char</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#enumeration-types">Enumeration Types</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#integer-types">Integer Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#representation">Representation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#minimum-range-and-size">Minimum Range and Size</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#ranking">Ranking</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#special-integer-types">Special Integer Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#int">int</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#unsigned-char">unsigned char</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#bool">_Bool</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#floating-types">Floating Types</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#derived-types">Derived Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#array-types">Array Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#structure-types">Structure Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#union-types">Union Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#function-types">Function Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#pointer-types">Pointer Types</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#type-defines">Type defines</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#additional-type-categories">Additional Type Categories</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/type-system.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html">Declarations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#introduction">Introduction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#declaration-specifiers">Declaration Specifiers</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#type-specifiers">Type Specifiers</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#type-qualifiers">Type Qualifiers</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#const">const</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#volatile">volatile</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#restrict">restrict</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#storage-class-specifiers">Storage-Class Specifiers</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#typedef">typedef</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#extern">extern</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#id2">Declarations</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#basic-type-declarations">Basic Type Declarations</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#arrays">Arrays</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#pointers">Pointers</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#functions">Functions</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#further-derived-types">Further derived types</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#initialization">Initialization</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#special-case-string-literal-initialization">Special Case: String-literal initialization</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../modules/03/explorations/c-language/language-standard/declarations.html#implicit-initialization">Implicit Initialization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/03/explorations/c-language/standard-library/index.html">C Standard Library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/04/index.html">Filesystems and File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/05/index.html">Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/06/index.html">Process Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/07/index.html">Inter-Process Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/08/index.html">Concurrency and Multithreading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/09/index.html">Network and Sockets Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/10/index.html">Systems Programming Best Practices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Course Meta</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Coding Style</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line-length">Line Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#braces">Braces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spacing">Spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#naming">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exiting-from-functions">Exiting from Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commenting">Commenting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variable-length-arrays">Variable Length Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#declarations">Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-compiler-is-not-magic">“The Compiler is not Magic”</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D73F09" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CS 374 - Operating Systems</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Coding Style</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../modules/10/index.html" class="btn btn-neutral float-left" title="Systems Programming Best Practices" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="coding-style">
+<h1>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading"></a></h1>
+<p>In this course, you are expected to follow the coding style set forth
+in this document. Coding style is personal, and you may deviate from these
+rules using sound judgement, when required, but you may lose points on an
+assignment if you stray too far into <em>unreadable</em> territory.</p>
+<p>Our coding style is loosely based off of the
+<a class="reference external" href="https://kernel.org/doc/html/latest/process/coding-style.html" title="(in The Linux Kernel v6.5.0-rc2)"><span>Linux kernel coding style</span></a>.</p>
+<section id="indentation">
+<h2>Indentation<a class="headerlink" href="#indentation" title="Permalink to this heading"></a></h2>
+<p>Indentation may be 2, 4, or 8 spaces, or one tab.</p>
+<p>Do not put multiple statements on a single line:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Do not leave whitespace at the end of lines.</p>
+</section>
+<section id="line-length">
+<h2>Line Length<a class="headerlink" href="#line-length" title="Permalink to this heading"></a></h2>
+<p>The preferred limit on the length of a single line is 100 columns. If a
+statement, expression, or declaration spans multiple lines, use a
+hanging-indent that is not easily confused with indented block-level code.</p>
+</section>
+<section id="braces">
+<h2>Braces<a class="headerlink" href="#braces" title="Permalink to this heading"></a></h2>
+<p>Function blocks begin and end with a single brace in column 0:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="cm">/* do something */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Selection and Iteration statements have the opening brace at the end of the
+line, and the closing brace at the same indentation level as the surrounding
+code. The closing brace should appear on its own line, except in the case where
+it is followed by the continuation of the same statement, such as with a
+do-while loop or an <span class="highlight context-highlighting code c literal highlight-c"><span class="k">else</span></span> in an if-statement, like so:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">..</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">....</span>
+<span class="p">}</span>
+
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="spacing">
+<h2>Spacing<a class="headerlink" href="#spacing" title="Permalink to this heading"></a></h2>
+<p>Use spaces between control statement keywords, the parenthesized expressions, and the opening brace;</p>
+<p>Good:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="w"> </span><span class="p">{</span>
+
+<span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<p>Bad:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
+
+<span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
+
+<span class="n">etc</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>Do not add spaces around (inside) parenthesized expressions. This example is <strong>bad</strong>:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">file</span><span class="w"> </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use one space between most binary/ternary operators and their operands:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="o">=</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="o">:</span>
+</pre></div>
+</div>
+<p>but no space between these unary operators and their operands:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">+-</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="o">--</span>
+</pre></div>
+</div>
+<p>or around the <span class="highlight context-highlighting code c literal highlight-c"><span class="p">.</span></span> and <span class="highlight context-highlighting code c literal highlight-c"><span class="o">-</span><span class="o">&gt;</span></span> structure member operators.</p>
+<p>The <span class="highlight context-highlighting code c literal highlight-c"><span class="k">sizeof</span></span> operator should always be followed by a space. It is not a function; do not
+mistake it for one!</p>
+<p>Good:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="n">x</span><span class="p">;</span>
+<span class="o">*</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Bad:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="o">++</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">12</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="n">y</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This also applies to the asterisk in a pointer declarator, which is intended to mimic exactly
+its usage as a unary dereference operator, and which binds <em>to the right</em>:</p>
+<p>Correct: <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">T</span><span class="w"> </span><span class="o">*</span><span class="n">P</span></span></p>
+<p>Incorrect: <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">T</span><span class="o">*</span><span class="w"> </span><span class="n">P</span></span> and <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">T</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">P</span></span></p>
+<p>Explicit parentheses can illustrate this point more clearly:</p>
+<p>Correct: <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">T</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">P</span><span class="p">)</span></span></p>
+<p>Incorrect: <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">T</span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">P</span><span class="p">)</span></span> and <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">T</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">P</span><span class="p">)</span></span></p>
+</section>
+<section id="naming">
+<h2>Naming<a class="headerlink" href="#naming" title="Permalink to this heading"></a></h2>
+<p>Do not smushwordstogether or UseCamelCase. Abbreviations are perfectly fine, but
+global variables must be named descriptively. Do not encode the type of a variable
+in its name (Hungarian Notation), such as <span class="highlight context-highlighting code c literal highlight-c"><span class="n">szName</span></span>.</p>
+<p><strong>All</strong> object-like macros should be named in UPPER_CASE_SNAKE_CASE.
+Function-like macros that include an argument that is evaluated more than once
+<strong>must</strong> be in UPPER_CASE_SNAKE_CASE; otherwise they can be in lower-case.</p>
+<p>Good:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MAX_ARGS 1024</span>
+<span class="cp">#define MAX(a, b) (a &gt; b ? a : b)</span>
+<span class="cp">#define hi(x) (x &amp; 0xF0) </span><span class="c1">// Ok, x evaluated only once</span>
+<span class="cp">#define array_len(x) (sizeof (x) / sizeof (*x))   </span><span class="c1">// sizeof does not evaluate its expression</span>
+<span class="cp">#define ARRAY_LEN(x) (sizeof (x) / sizeof (*x))   </span><span class="c1">// Also ok</span>
+</pre></div>
+</div>
+<p>Bad:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define max_args 1024</span>
+<span class="cp">#define MaxArgs 1024</span>
+<span class="cp">#define max(a, b) (a &gt; b ? a : b)</span>
+</pre></div>
+</div>
+<p><strong>ALL</strong> enumeration constants should be written in UPPER_CASE_SNAKE_CASE.</p>
+<p>Good:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">COLOR_RED</span><span class="p">,</span>
+<span class="w">   </span><span class="n">COLOR_BLUE</span><span class="p">,</span>
+<span class="w">   </span><span class="n">COLOR_GREEN</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p><strong>All</strong> other identifiers should be written in snake_case (i.e. lower-case
+alphanumerics and underscores separating words). This includes function names,
+variable names, tag names, and typedef names.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Common short variable names/affixes</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<tbody>
+<tr class="row-odd"><td><p>Loop Counters</p></td>
+<td><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">i</span></span>, <span class="highlight context-highlighting code c literal highlight-c"><span class="n">j</span></span>, <span class="highlight context-highlighting code c literal highlight-c"><span class="n">k</span></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Coordinates</p></td>
+<td><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">x</span></span>, <span class="highlight context-highlighting code c literal highlight-c"><span class="n">y</span></span>, <span class="highlight context-highlighting code c literal highlight-c"><span class="n">z</span></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Short-lived variables</p></td>
+<td><ul class="simple">
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">c</span></span> or <span class="highlight context-highlighting code c literal highlight-c"><span class="n">ch</span></span> for a character</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">s</span></span> or <span class="highlight context-highlighting code c literal highlight-c"><span class="n">str</span></span> for strings</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">n</span></span> for integers</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">p</span></span> for <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">void</span><span class="w"> </span><span class="o">*</span></span></p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">buf</span></span> or <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">a</span><span class="n">rr</span></span> for a buffer/array</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">fp</span></span> for an open <span class="highlight context-highlighting code c literal highlight-c"><span class="no">FILE</span><span class="w"> </span><span class="o">*</span></span> stream</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">fd</span></span> for an open file descriptor</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="n">tmp</span></span> for anything</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<p>Functions should be short and do one thing. A function should generally be less
+than 50 lines, with its length inversely proportional to its complexity – a
+logically simple function can be much longer than a complex one.</p>
+<p>As a rule of thumb, you should try not to use more than 10 local variables in a
+function, since that’s about the limit of what most people can keep track of at
+once.</p>
+<p>Include parameter names with data types in function declarations/prototypes.</p>
+</section>
+<section id="exiting-from-functions">
+<h2>Exiting from Functions<a class="headerlink" href="#exiting-from-functions" title="Permalink to this heading"></a></h2>
+<p>A function may return directly at any point as long as it has only modified
+local variables. Once a function does anything that changes program state
+(modifies a global variable, modifies objects passed by reference, successfully
+allocates memory, etc.), all exit paths must pass through a single centralized
+cleanup-and-exit at the end of the function.</p>
+<p>For functions that return a value indicating success or failure:</p>
+<ul class="simple">
+<li><p>If the name of a function is an action or an imperative command, the function
+should return an error-code integer (<span class="highlight context-highlighting code c literal highlight-c"><span class="o">-</span><span class="n">Exxx</span></span> = failure, <span class="highlight context-highlighting code c literal highlight-c"><span class="mi">0</span></span> = success).</p></li>
+<li><p>If the name is a predicate, the function should return a boolean (<span class="highlight context-highlighting code c literal highlight-c"><span class="mi">1</span></span> = true,
+<span class="highlight context-highlighting code c literal highlight-c"><span class="mi">0</span></span> = false).</p></li>
+</ul>
+<p>For functions that return pointers to objects, they should return <span class="highlight context-highlighting code c literal highlight-c"><span class="no">NULL</span></span> on failure
+and set <span class="highlight context-highlighting code c literal highlight-c"><span class="nv">errno</span></span> as appropriate.</p>
+</section>
+<section id="commenting">
+<h2>Commenting<a class="headerlink" href="#commenting" title="Permalink to this heading"></a></h2>
+<p><strong>Every</strong> function must be documented using <a class="reference external" href="https://www.doxygen.nl/manual/docblocks.html">doxygen</a>/Javacdoc style block comments:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* ... text ...</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<p>At a minimum, a brief description of the function, each of its parameters, and
+its return value is <strong>required</strong>:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Registers a student into the course roster</span>
+<span class="cm"> * @param name the student&#39;s name</span>
+<span class="cm"> * @param email the student&#39;s email</span>
+<span class="cm"> * @param id the student&#39;s 9-digit ONID</span>
+<span class="cm"> * @return the index of the student in the course roster, or -1 on failure</span>
+<span class="cm"> */</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">register_student</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Function bodies should generally have few comments; when used, they should
+describe <strong>what</strong> you are doing, not <strong>how</strong>. Anyone can read your code
+to see how it works, but they want to know <em>why</em> you are doing what you are
+doing.</p>
+<p>Do not, under any circumstances, submit commented-out <em>code</em>. We do not accept
+draft work. Use preprocessor conditional compilation (to remove debugging code
+from the release version of your program:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="cp">#if DEBUG</span>
+<span class="p">...</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</section>
+<section id="variable-length-arrays">
+<h2>Variable Length Arrays<a class="headerlink" href="#variable-length-arrays" title="Permalink to this heading"></a></h2>
+<p>Do not ever use VLAs (variable length arrays). These are arrays that are
+declared using a variable for the size of the array, instead of a compile-time
+constant expression. VLAs are widely considered a mistake in the language and
+create all kinds of unexpected problems. An example of a VLA:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Use dynamic allocation, instead.</p>
+</section>
+<section id="declarations">
+<h2>Declarations<a class="headerlink" href="#declarations" title="Permalink to this heading"></a></h2>
+<p>Declarations always follow the following order:</p>
+<ol class="arabic simple">
+<li><p>Storage class specifiers</p></li>
+<li><p>Function specifiers</p></li>
+<li><p>Type specifiers</p></li>
+<li><p>Type qualifiers</p></li>
+</ol>
+<p>Type specifiers should be written using the shortest canonical name of the
+respective type. For example, use <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">short</span></span> in preference to <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">short</span><span class="w"> </span><span class="kt">int</span></span>; do not
+use the <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">signed</span></span> keyword except for <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span></span>, and don’t switch up the
+order, such as <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">char</span><span class="w"> </span><span class="kt">signed</span></span> or <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span><span class="w"> </span><span class="kt">unsigned</span></span>.</p>
+<p>Although C lets you do so, don’t declare objects with different derived types
+in the same declaration, because it is confusing, such as <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">;</span></span></p>
+</section>
+<section id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this heading"></a></h2>
+<p>Use <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">char</span></span> only for holding ASCII text character data.</p>
+<p>Use <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span></span> when working with raw bytes of data.</p>
+<p>Use <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span></span> for generic integers that are known not to exceed the range ±32767.</p>
+<p>Use <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">float</span></span> or <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">double</span></span> for floating point values. Exact ratios should be stored as two integers to avoid rounding errors.</p>
+<p>All other types should be used only in specific situations. For example,</p>
+<ul class="simple">
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="kt">short</span></span> and <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span></span> are sometimes used in large arrays of integers with a restricted range to improve cache performance when there is a memory bottleneck. These are generally less efficient than a plain <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span></span> and should be avoided otherwise.</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="kt">long</span></span> and <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></span> are sometimes used when a larger range than <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span></span> guarantees is desired. They are generally less efficient than a plain <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span></span> and should be avoided otherwise.</p></li>
+<li><p><span class="highlight context-highlighting code c literal highlight-c"><span class="kt">size_t</span></span> for array indices and loop counting. It’s perfectly fine to use a plain <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span></span> if you <strong>know</strong> that it won’t overflow; otherwise use <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">size_t</span></span> which is generally less efficient than an <span class="highlight context-highlighting code c literal highlight-c"><span class="kt">int</span></span>.</p></li>
+<li><p>The fixed width types in <code class="file docutils literal notranslate"><span class="pre">stdint.h</span></code> should generally only be used when working with data where the exact width is relevant to a particular algorithm or format specification. These are used more ubiquitously in embedded systems to control memory usage.</p></li>
+</ul>
+</section>
+<section id="the-compiler-is-not-magic">
+<h2>“The Compiler is not Magic”<a class="headerlink" href="#the-compiler-is-not-magic" title="Permalink to this heading"></a></h2>
+<p>Do not assume the compiler will fix your mistakes or lazy/poor coding habits. For example,
+do not call costly functions over and over in a loop to calculate a result you <em>know</em>
+shouldn’t change. The following is <strong>horrifically</strong> bad:</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nf">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>vs,</p>
+<div class="highlight-c99 notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strlen</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">len</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first example can easily be 1000’s of times less performant, with a run-time complexity
+of O(n^2) compared to O(n) in the second example. Unless <span class="highlight context-highlighting code c literal highlight-c"><span class="n">str</span></span> is changing length, don’t
+ever do the first example!</p>
+<p>Other common bad practices:</p>
+<ul class="simple">
+<li><p>Using I/O system calls to read/write data in many small chunks instead of one large request</p></li>
+<li><p>Not checking return values of functions to verify success or handle failure</p></li>
+<li><p>Using absurdly large arrays to avoid dealing with dynamic allocation</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../modules/10/index.html" class="btn btn-neutral float-left" title="Systems Programming Best Practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

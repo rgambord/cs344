@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; CS 374 - Operating Systems  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/brand.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.svg"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #D73F09" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            CS 374 - Operating Systems
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../00/index.html">Start Here</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00/setup_guide.html">CS 344 Setup Guide (eCampus)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00/setup_guide.html#pre-setup">Pre-Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00/setup_guide.html#configuration-process-overview">Configuration Process Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../00/setup_guide.html#installing-a-terminal-emulator">Installing a Terminal Emulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#windows">Windows</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../00/setup_guide.html#option-1">Option 1</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#option-2">Option 2</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../00/setup_guide.html#option-3">Option 3</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#macos-linux-bsd-etc">MacOS, Linux, BSD, etc.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../00/setup_guide.html#local-setup">Local Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#generate-public-private-key-pair">Generate Public/Private Key Pair</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#register-public-key-credential-with-server">Register Public Key Credential with Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#confirm-key-registration">Confirm Key Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../00/setup_guide.html#configure-ssh-client">Configure SSH Client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../00/setup_guide.html#remote-setup">Remote Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Operating Systems Fundamentals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/index.html#explorations">Explorations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/introduction.html">Introduction to Operating Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/introduction.html#a-brief-history-of-unix">A Brief History of Unix</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/introduction.html#posix-and-sus">POSIX and SuS</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/introduction.html#the-c-programming-language">The C Programming Language</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/introduction.html#the-kernel-and-system-utilities">The Kernel and System Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/processes.html">Programs and Processes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/processes.html#virtual-memory">Virtual Memory</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#swapping">Swapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#lazy-allocation-and-over-commit">Lazy Allocation and Over-Commit</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#shared-memory">Shared Memory</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/processes.html#user-mode-kernel-mode-and-system-calls">User Mode, Kernel Mode, and System Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/processes.html#inter-process-communication">Inter-process Communication</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#signals">Signals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#pipes">Pipes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#unix-sockets">Unix Sockets</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/processes.html#process-hierarchy">Process Hierarchy</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#init-process">Init Process</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/processes.html#process-creation-and-cleanup">Process Creation and Cleanup</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/processes.html#user-and-group-id">User and Group ID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/processes.html#file-descriptors">File Descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/filesystem.html">File Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/filesystem.html#file-system-structure">File System Structure</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#mounting-and-unmounting-file-systems">Mounting and Unmounting File systems</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#links">Links</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/filesystem.html#hard-links">Hard Links</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/filesystem.html#symbolic-links">Symbolic Links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/filesystem.html#access-permissions">Access Permissions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#file-ownership">File Ownership</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#special-permission-bits">Special Permission Bits</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/filesystem.html#set-user-id-bit">Set User ID Bit</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/filesystem.html#set-group-id-bit">Set Group ID Bit</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/filesystem.html#sticky-bit">Sticky Bit</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#representation-of-file-mode">Representation of File Mode</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#permissions-and-special-files">Permissions and Special Files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#alternative-access-control">Alternative Access Control</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/filesystem.html#additional-file-metadata">Additional File Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/filesystem.html#the-filesystem-hierarchy-standard">The Filesystem Hierarchy Standard</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#the-fhs-directory-structure">The FHS Directory Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/filesystem.html#additional-file-system-concepts">Additional File System Concepts</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#hidden-files-dotfiles">Hidden Files (Dotfiles)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#dot-and-dot-dot">Dot (<code class="file docutils literal notranslate"><span class="pre">.</span></code>) and Dot-Dot (<code class="file docutils literal notranslate"><span class="pre">..</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#special-device-files">Special Device Files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/filesystem.html#home-directory">Home Directory (<code class="file docutils literal notranslate"><span class="pre">~/</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/terminal.html">Terminal Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/terminal.html#terminal-operating-modes">Terminal Operating Modes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/terminal.html#local-modes">Local Modes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/terminal.html#control-characters">Control Characters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/terminal.html#input-characters-which-generate-signals">Input characters which generate signals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/terminal.html#input-characters-which-control-the-line-buffer">Input characters which control the line buffer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/terminal.html#flow-control-characters">Flow control characters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/terminal.html#terminal-demonstration">Terminal Demonstration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/terminal.html#control-codes">Control Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/utilities.html">Utilities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/utilities.html#the-shell">The Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/utilities.html#text-editors">Text Editors</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/utilities.html#line-editors">Line Editors</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/utilities.html#visual-editors">Visual Editors</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/utilities.html#documentation-browsers">Documentation Browsers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/utilities.html#manual-pager">Manual Pager</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/utilities.html#gnu-info">GNU Info</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/shell.html">The Interactive Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/simple_commands.html">Simple Commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/quoting.html">Quoting</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/quoting.html#backslash-escapes">Backslash Escapes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/quoting.html#single-quotes">Single Quotes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/quoting.html#double-quotes">Double Quotes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/expansion.html">Expansion</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#tilde-expansion">Tilde Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#parameter-expansion">Parameter Expansion</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/shell/expansion.html#positional-and-special-parameters">Positional and Special Parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/shell/expansion.html#shell-variables">Shell Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/shell/expansion.html#modified-parameter-expansion">Modified Parameter Expansion</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#command-substitution">Command Substitution</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#arithmetic-expansion">Arithmetic Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#field-splitting">Field Splitting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#pathname-expansion">Pathname Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/expansion.html#quote-removal">Quote Removal</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/variable_assignment_and_redirection.html">Variable Assignment and Redirection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/variable_assignment_and_redirection.html#variable-assignment">Variable Assignment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/variable_assignment_and_redirection.html#redirection">Redirection</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/shell/variable_assignment_and_redirection.html#file-redirection">File Redirection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/shell/variable_assignment_and_redirection.html#duplication">Duplication</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../01/explorations/shell/variable_assignment_and_redirection.html#here-documents">Here Documents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/command_execution.html">Command Execution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/pipelines.html">Pipelines</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../01/explorations/shell/pipelines.html#pipeline-subshells">Pipeline Subshells</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/shell/background.html">Background Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/explorations/vim.html">Software Development in Vim</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/vim.html#vimtutor">Vimtutor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/explorations/vim.html#other-tips">Other tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../01/index.html#assignments">Assignments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01/assignments/reading.html">Assigned Reading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01/assignments/reading.html#posix-standard">POSIX Standard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01/assignments/reading.html#man-pages">Man Pages</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../01/assignments/viewing.html">Assigned Viewing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">The Shell Command Language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/index.html#explorations">Explorations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02/explorations/review.html">Interactive Shell Review</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/review.html#basic-shell-operation">Basic Shell Operation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/review.html#quoting-rules">Quoting Rules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/review.html#expansion">Expansion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/review.html#redirection">Redirection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/review.html#variable-assignment">Variable Assignment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/review.html#execution">Execution</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/review.html#waiting">Waiting</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/review.html#pipelines">Pipelines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/review.html#background-commands-and-jobs">Background Commands and Jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../02/explorations/noninteractive_shell.html">The Non-interactive Shell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/noninteractive_shell.html#writing-and-executing-a-shell-script">Writing and Executing a Shell Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/noninteractive_shell.html#hallmarks-of-a-shell-script">Hallmarks of a Shell Script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../02/explorations/parameters.html">Shell Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/parameters/positional_parameters.html">Positional Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/parameters/positional_parameters.html#modifying-positional-parameters">Modifying Positional Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/parameters/special_parameters.html">Special Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/parameters/special_parameters.html#exit-status">Exit Status (<code class="docutils literal notranslate"><span class="pre">?</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/parameters/special_parameters.html#shell-options">Shell Options (<code class="docutils literal notranslate"><span class="pre">-</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/parameters/special_parameters.html#process-id">Process ID (<code class="docutils literal notranslate"><span class="pre">$</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/parameters/special_parameters.html#background-process-id">Background Process ID (<code class="docutils literal notranslate"><span class="pre">!</span></code>)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/parameters/special_parameters.html#program-name-0">Program Name (<code class="docutils literal notranslate"><span class="pre">0</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../02/explorations/control_flow.html">Control Flow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/control_flow.html#background">Background</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/background/reserved_words_and_operators.html">Reserved Words and Operators</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/reserved_words_and_operators.html#reserved-words">Reserved Words</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/reserved_words_and_operators.html#control-operators">Control Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html">Exit Status</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html#exit-status-semantics">Exit Status Semantics</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html#exit-status-parameter">Exit status parameter</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html#familiar-constructs">Familiar Constructs</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html#simple-commands">Simple Commands</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html#pipelines">Pipelines</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../02/explorations/control_flow/background/exit_status.html#asynchronous-commands">Asynchronous Commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/background/shell_grammar.html">Shell Grammar</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/shell_grammar.html#and-or-lists">And-or Lists</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/background/shell_grammar.html#compound-lists">Compound-Lists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/control_flow.html#compound-commands">Compound Commands</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/grouping_constructs.html">Grouping Constructs</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/grouping_constructs.html#subshell">Subshell</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/grouping_constructs.html#brace-group">Brace Group</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/loops.html">Loops</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/loops.html#while-loop">While Loop</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/loops.html#until-loop">Until Loop</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/loops.html#for-loop">For Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/conditional_constructs.html">Conditional Constructs</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/conditional_constructs.html#if-conditional-construct">If Conditional Construct</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/compound_commands/conditional_constructs.html#case-conditional-construct">Case Conditional Construct</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/control_flow.html#shell-functions">Shell Functions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/control_flow/function_definition.html">Function Definition</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/function_definition.html#function-parameters">Function Parameters</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/control_flow/function_definition.html#explicit-return">Explicit Return</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../02/explorations/builtins.html">Builtins</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/builtins.html#regular-built-ins">Regular Built-ins</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/builtins/aliases.html">Alias Substitution</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/aliases.html#aliasing-reserved-words">Aliasing Reserved Words</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/aliases.html#alias-best-practices">Alias Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/builtins/getopts.html">Options Processing</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/getopts.html#arguments">Arguments</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/getopts.html#exit-status">Exit Status</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/getopts.html#operation">Operation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/getopts.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/builtins/file_access_and_creation.html">File Access and Creation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/file_access_and_creation.html#file-mode-creation-mask-umask">File Mode Creation Mask (umask)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/file_access_and_creation.html#group-selection">Group Selection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/builtins.html#special-built-ins">Special Built-Ins</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/builtins/parameters_and_options.html">Parameters and Options</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/parameters_and_options.html#unsetting-variables">Unsetting Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/parameters_and_options.html#exporting-variables">Exporting Variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/parameters_and_options.html#readonly-variables">Readonly variables</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../02/explorations/builtins/parameters_and_options.html#shell-options">Shell Options</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../02/explorations/builtins/signals.html">Signal Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../02/explorations/executable_scripts.html">Executable Shell Scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/executable_scripts.html#magic-bytes">Magic Bytes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/executable_scripts.html#executable-formats">Executable Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../02/explorations/executable_scripts.html#shebang">Shebang</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../02/index.html#assignments">Assignments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Introduction to C</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/explorations/c-language/index.html">The C Programming Language</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html">Conceptual Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#environment">Environment</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#the-translation-environment">The Translation Environment</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#preprocessing">Preprocessing</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#compilation">Compilation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#linking">Linking</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#the-execution-environment">The Execution Environment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#conformance">Conformance</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#the-c-abstract-machine-model">The C Abstract Machine Model</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#behavior">Behavior</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#unspecified-behavior"><span class="xref std std-ref">Unspecified Behavior</span></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#implementation-defined-behavior"><span class="xref std std-ref">Implementation-defined Behavior</span></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#locale-specific-behavior"><span class="xref std std-ref">Locale-specific Behavior</span></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/conceptual-model/index.html#undefined-behavior"><span class="xref std std-ref">Undefined Behavior</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../03/explorations/c-language/language-standard/index.html">Language</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html">C Object Model</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#effective-type">Effective Type</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#size">Size</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#object-representation">Object Representation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#value">Value</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#alignment">Alignment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#storage-duration-and-lifetime">Storage Duration and Lifetime</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/object-model.html#address">Address</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html">Identifiers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#name-space">Name Space</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#label-names">Label Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#tag-names">Tag Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#member-names">Member Names</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#ordinary-identifiers">Ordinary Identifiers</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#scope">Scope</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#function-scope">Function Scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#file-scope">File Scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#block-scope">Block Scope</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#function-prototype-scope">Function Prototype Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#linkage">Linkage</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#no-linkage">No Linkage</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#internal-linkage">Internal Linkage</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/identifiers.html#external-linkage">External Linkage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html">C Type System</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#special-types">Special Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#void">void</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#char">char</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#enumeration-types">Enumeration Types</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#integer-types">Integer Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#representation">Representation</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#minimum-range-and-size">Minimum Range and Size</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#ranking">Ranking</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#special-integer-types">Special Integer Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#int">int</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#unsigned-char">unsigned char</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#bool">_Bool</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#floating-types">Floating Types</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#derived-types">Derived Types</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#array-types">Array Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#structure-types">Structure Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#union-types">Union Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#function-types">Function Types</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#pointer-types">Pointer Types</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#type-defines">Type defines</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#additional-type-categories">Additional Type Categories</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/type-system.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html">Declarations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#introduction">Introduction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#declaration-specifiers">Declaration Specifiers</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#type-specifiers">Type Specifiers</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#type-qualifiers">Type Qualifiers</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#const">const</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#volatile">volatile</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#restrict">restrict</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#storage-class-specifiers">Storage-Class Specifiers</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#typedef">typedef</a></li>
+<li class="toctree-l7"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#extern">extern</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#id2">Declarations</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#basic-type-declarations">Basic Type Declarations</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#arrays">Arrays</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#pointers">Pointers</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#functions">Functions</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#further-derived-types">Further derived types</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#initialization">Initialization</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#special-case-string-literal-initialization">Special Case: String-literal initialization</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../03/explorations/c-language/language-standard/declarations.html#implicit-initialization">Implicit Initialization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../03/explorations/c-language/standard-library/index.html">C Standard Library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../04/index.html">Filesystems and File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/index.html">Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/index.html">Process Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/index.html">Inter-Process Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/index.html">Concurrency and Multithreading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/index.html">Network and Sockets Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10/index.html">Systems Programming Best Practices</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Course Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../meta/style.html">Coding Style</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#indentation">Indentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#line-length">Line Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#braces">Braces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#spacing">Spacing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#naming">Naming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#exiting-from-functions">Exiting from Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#commenting">Commenting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#variable-length-arrays">Variable Length Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#declarations">Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meta/style.html#the-compiler-is-not-magic">“The Compiler is not Magic”</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #D73F09" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CS 374 - Operating Systems</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
+<p>This course covers a lot of materials and for many is their first
+approach to C programming and related OS concepts. Before we begin,
+let’s introduce ourselves to the major resources and tools we will be
+using in the course. Next we will review the general course structure
+and design philosophy so that you can better understand how your
+instructor intends for you to engage with the course. In the remaing
+pages of this module, we will take the Syllabus Quiz, walk through the
+Software Setup Guide, and learn to use some of the software tools we
+will be expected to be familiar with in the first week of the course.</p>
+<section id="major-resources-and-reference-works">
+<h2>Major Resources and Reference Works<a class="headerlink" href="#major-resources-and-reference-works" title="Permalink to this heading"></a></h2>
+<p>In this class, we will study several resources in order to learn more
+about the broad topic of Operating Systems. A large amount of our
+readings will involve direct analysis of standards documents and
+reference materials.</p>
+<section id="standards">
+<h3>Standards<a class="headerlink" href="#standards" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Single Unix Specification</strong> – The Single UNIX Specification,
+version 4 (SuSv4), published by the Open Group, a global consortium
+dedicated to open, vendor-neutral technology standards. SuSv4 defines
+the minimum standard that an operating system must meet in order to
+be able to be called a “UNIX” operating system. SuSv4 is the
+collation of three major works:</p>
+<ul>
+<li><p><strong>C Language</strong> – The <em>de facto</em> language of systems programming
+since its debut the early 1970s. SuSv4 aligns with and extends,
+but does not directly incorporate, the 1999 version of this
+standard: ISO/IEC 9899:1999, also called C99.</p></li>
+<li><p><strong>POSIX</strong> – The Portable Operating System Interface standard
+defines, broadly, the basic features of a POSIX operating system,
+the system interfaces and a set of standard system utilities.
+SuSv4 is largely based on the 2008 version of this standard:
+ISO/IEC 9945:2009, also published as IEEE 1003.1-2008, often
+called POSIX.1-2008. POSIX is also published as a standalone
+specification by the Open Group.</p></li>
+<li><p><strong>XCURSES</strong> – X/Open Curses describes a set of interfaces for
+terminal-independent methods of updating character screens. X/Open
+was an organization that combined with the Open Software
+Foundation in 1996 to form the Open Group. XCURSES is directly
+defined as a volume of the SuS, and is not a standalone
+specification.</p></li>
+</ul>
+</li>
+<li><p><strong>System V</strong> – System V Application Binary Interface, edition 4.1
+(SRV4), published in 1996. System V (“System Five”) was one of the
+first commercial versions of the Unix Operating System developed by
+AT&amp;T. SYSV, and its Executable and Linkable Format (ELF) remains the
+most widely adopted ABI and executable file format specification
+among all Unix-like systems.</p></li>
+</ul>
+</section>
+<section id="local-documentation">
+<h3>Local Documentation<a class="headerlink" href="#local-documentation" title="Permalink to this heading"></a></h3>
+<p>Throughout the course, we will routinely refer to local documentation on
+our class server as we complete our assignments. The software utilities
+and system interfaces actually installed on a system are implementations
+of the standards mentioned above, but may (often) have additional
+features or deviations from the standards. Local documentation describes
+these actual implementation details and should be your first-line
+reference when working on a particular system.</p>
+<p><em>Beware!</em> – Local documentation is version-specific to the software on
+the system, it’s important to be mindful that newer online versions of
+these resources (such as man7.org) may have subtle, but critical,
+differences, which can lead to a lot of head scratching!</p>
+<ul class="simple">
+<li><p><strong>Manual pages</strong> – Every system comes with a set of “man” pages;
+originally distributed with operating systems as actual published
+manuals, man pages are now distributed in a digital format, and are
+specific to the versions of software present on the systems on which
+they are found. We will use the <code class="docutils literal notranslate"><span class="pre">man</span></code> system utility to navigate
+the digital manual.</p></li>
+<li><p><strong>Info pages</strong> – GNU, the open source project that implemented many
+of the system utilities used by different Unix-like operating
+systems, also includes the GNU <code class="docutils literal notranslate"><span class="pre">info</span></code> utility. Similar to man
+pages, Info pages go into greater depth and detail about a particular
+topic. While man pages are generally intended as a quick reference,
+info pages are meant to be more of a learning material.</p></li>
+</ul>
+</section>
+<section id="textbooks">
+<h3>Textbooks<a class="headerlink" href="#textbooks" title="Permalink to this heading"></a></h3>
+<p>Both textbooks for this course are available for free online.</p>
+<ul class="simple">
+<li><p><strong>The Linux Programming Interface</strong> – TLPI organizes and explains the
+use of the Linux System Interfaces from the perspective of the needs
+of a system programmer. While the standards generally describe
+abstract behaviors and requirements, TLPI covers the implementation
+details of specific interfaces in the actual Linux operating system.</p></li>
+<li><p><strong>Modern C</strong> – Modern C is a guide to C programming written by Jens
+Gustedt. Jens is a renowned expert in C programming, and sits on the
+C standards committee, JTC1/SC22/WG15.</p></li>
+</ul>
+</section>
+</section>
+<section id="major-software-tools">
+<h2>Major Software Tools<a class="headerlink" href="#major-software-tools" title="Permalink to this heading"></a></h2>
+<p>We will use several key pieces of software to accomplish our assignments
+and learn more about operating systems. All of this software is
+pre-installed on our class server and ready for you to use. With too
+many to list here, some of the most important to be aware of are:</p>
+<ul>
+<li><p><strong>*nix</strong> – “*nix” is shorthand for “Unix-like Operating System”. As
+we will learn later, this mostly refers to three major branches
+within the Unix family tree:</p>
+<ul class="simple">
+<li><p>Linux/GNU – the free and open source operating system, created by
+Linus Torvalds in 1991</p></li>
+<li><p>Darwin/MacOS – Apple’s operating system, first created in the
+early 2000s</p></li>
+<li><p>BSD – The descendants of the other free and open source Berkley
+Software Distribution from 1978</p></li>
+</ul>
+<p>In this class, we will do all of our work on a Linux server hosted at
+OSU, called <em>os1</em>.</p>
+</li>
+<li><p><strong>System Utilities</strong> – There are 160 standard POSIX system utilities,
+and we will learn to use a subset of these for common tasks. The most
+important are:</p>
+<ul class="simple">
+<li><p><strong>Shell</strong> – The command-line shell provides the primary mechanism
+for interactive control of the operating system: the command-line
+interface. There are several popular implementations of the shell
+specification; in this class, we use Bash (Bourne Again Shell).</p></li>
+<li><p><strong>Vim</strong> – The industry-standard terminal-based text editor, widely
+used by systems programmers for editing files and working on
+software projects. Vim is often the only text editor available on
+headless, remote, or embedded systems, and professional programers
+need to have a basic level of familiarity with it. In this class,
+we use a modern reimplementation called NeoVim that has been
+heavily preconfigured for this class.</p></li>
+<li><p><strong>C compiler</strong> – The C compiler translates source code into
+executables. In this class, we use the gcc (GNU Compiler
+Collection) compiler implementation and write our code according
+to the C99 language specification.</p></li>
+<li><p><strong>Make</strong> – Part of the Software Development Utilities (SDU) of
+POSIX, Make is used to maintain, update, and regenerate groups of
+programs. We will use Make to build our projects, specifically,
+the GNU implementation, which has many additional features
+(gmake).</p></li>
+</ul>
+</li>
+<li><p><strong>GNU Toolchain</strong> – A collection of programming utilities distributed
+by the GNU project. GCC and GNU Make were mentioned above. Other
+software included with the GNU Toolchain are:</p>
+<ul>
+<li><p><strong>GNU C Library (glibc)</strong> – An implementation of the C standard
+library.</p></li>
+<li><p><strong>GNU Binutils</strong> – Various tools for linking and assembling binary
+executables.</p></li>
+<li><p><strong>GNU Debugger (GDB)</strong> – A powerful code debugging tool.</p></li>
+<li><p><strong>GNU Autotools</strong> – A suite of tools for packaging software for
+source-based distribution; one of the most widely used packaging
+formats, with its signature 3-step installation command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">./configure</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">install</span></code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Doxygen</strong> – A powerful tool that generates documentation through
+familiar docstring (<code class="docutils literal notranslate"><span class="pre">/**</span></code>) comments and static code analysis.</p></li>
+</ul>
+</section>
+<section id="course-design-and-philosophy">
+<h2>Course Design and Philosophy<a class="headerlink" href="#course-design-and-philosophy" title="Permalink to this heading"></a></h2>
+<p>Operating Systems is a notoriously challenging topic for many students.
+It’s very common for students to feel lost and overwhelemed by the sheer
+volume of information that is available to them. This course is designed
+to introduce you to several key OS concepts while staying within a
+walled-garden of information that allows you to feel grounded by fully
+understanding what you must know before starting an assignment.</p>
+<section id="how-to-approach-readings">
+<h3>How to approach readings<a class="headerlink" href="#how-to-approach-readings" title="Permalink to this heading"></a></h3>
+<p>Software developers have to read a lot of documentatin. In this course,
+we will practice effective strategies for approaching the sometimes
+overwhelming amount of information present in documentation materials.
+We will also familiarizing ourselves with the language and writing style
+that most documentation uses.</p>
+<p>Each module has several assigned readings, and these readings are
+critical to your success in the course. Expect to read (or review)
+100-200 pages of materials per week. Often, you will be directed to
+<strong>skim</strong> a large number of pages of reference materials in order to
+understand the high-level structure and key information presented, so
+that you are primed to return to those materials later when questions
+arise, or when asked to review a particular section.</p>
+</section>
+<section id="communication">
+<h3>Communication<a class="headerlink" href="#communication" title="Permalink to this heading"></a></h3>
+<p>With so many different ways to communicate online, keeping track of all
+the possible communication channels can be overwhelming. For this
+reason, we do not use any canvas features to communicate directly with
+students, such as Canvas Announcements, Canvas Inbox, or assignment
+comments. We also do not fill out canvas rubrics, if present. Assignment
+feedback is provided via email.</p>
+<p>We communicate via <strong>email</strong> for personal matters (grading, illness,
+extensions, etc), and via <strong>Ed Discussions</strong> for all other
+course-related information. You are expected to check your email and Ed
+at least once per business day. You are expected to follow along with Ed
+discussions that take place, just as you would pay attention to in-class
+discussions in a traditional classroom setting.</p>
+<p>Office hours are held via <strong>Microsoft Teams</strong>, according to a public
+google calendar that the TAs are tasked with keeping up to date. TAs are
+required to make an announcement on Ed when making changes to their
+scheduled office hours that fall within the next week; otherwise they
+are free to make silent changes to their office hours for dates that are
+further out. Microsoft Teams is not used for any other purpose unless
+agreed upon in advance (such as a meeting previously scheduled via
+email).</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
